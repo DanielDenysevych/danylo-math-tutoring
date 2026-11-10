@@ -14,6 +14,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Private Math Tutor in Brandon, MB | Danylo Denysevych">
 <meta name="twitter:description" content="One-on-one private math tutoring in Brandon, Manitoba and nearby Westman communities, in person or online.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,7 +52,8 @@
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "Brandon University"
-    }
+    },
+    "knowsLanguage": ["English", "Ukrainian"]
   }
 }
 </script>
@@ -135,9 +140,8 @@
     padding:28px;box-shadow:0 20px 40px -24px rgba(30,36,48,0.25);
   }
   .hero-card .avatar{
-    width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#3f7a69);
-    color:#fff;display:flex;align-items:center;justify-content:center;
-    font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;margin-bottom:16px;
+    width:64px;height:64px;border-radius:50%;object-fit:cover;
+    display:block;margin-bottom:16px;
   }
   .hero-card h3{font-size:1.15rem;margin-bottom:4px;}
   .hero-card .role{color:var(--ink-soft);font-size:0.88rem;margin-bottom:8px;}
@@ -161,6 +165,7 @@
   .credential-list{list-style:none;margin-top:20px;}
   .credential-list li{display:flex;gap:10px;margin-bottom:12px;font-size:0.95rem;color:var(--ink);}
   .credential-list li::before{content:"✓";color:var(--accent);font-weight:700;}
+  .about-photo{width:170px;height:170px;border-radius:14px;object-fit:cover;margin-bottom:22px;}
 
   /* SUBJECTS */
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
@@ -258,7 +263,7 @@
     </div>
   </div>
   <div class="hero-card">
-    <div class="avatar">D</div>
+    <img class="avatar" src="assets/danylo-photo.jpg" alt="Danylo Denysevych, private math tutor in Brandon, MB">
     <h3>Danylo Denysevych</h3>
     <div class="role">Private Math Tutor · Brandon, MB</div>
     <div class="credline">4.0 GPA · Computer Science @ Brandon University (Math Minor)</div>
@@ -271,16 +276,18 @@
   <div class="wrap">
     <div class="about-grid">
       <div>
+        <img class="about-photo" src="assets/danylo-photo.jpg" alt="Danylo Denysevych, private math tutor in Brandon, MB">
         <div class="section-tag">About</div>
         <h2>Hi, I'm Danylo Denysevych.</h2>
         <div class="credline">4.0 GPA · Computer Science @ Brandon University (Math Minor)</div>
         <p>I'm a Computer Science student at Brandon University, minoring in Math and carrying a heavy math course load — including Calculus and Linear Algebra — with top grades across my university-level math courses. I tutor math one-on-one for students in and around Brandon, MB, from elementary foundations through high school algebra, geometry, and pre-calculus, as well as first-year university math.</p>
-        <p>My approach is simple: meet the student where they are, figure out exactly where the gaps are, and work through problems step by step until concepts click — not just get memorized. Every student learns differently, so every session is built around how you learn best.</p>
+        <p>My approach is simple: meet the student where they are, figure out exactly where the gaps are, and work through problems step by step until concepts click — not just get memorized. Every student learns differently, so every session is built around how you learn best. I'm fluent in both English and Ukrainian, so sessions can be held in whichever language is more comfortable.</p>
       </div>
       <div>
         <ul class="credential-list">
           <li>Computer Science student at Brandon University, minoring in Math</li>
           <li>4.0 GPA with top grades in university-level math courses</li>
+          <li>Fluent in English and Ukrainian</li>
           <li>Personalized lesson plans based on your current coursework</li>
           <li>Homework help, test prep, and concept review</li>
           <li>Clear, judgment-free explanations — no rushing</li>
