@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danylo — Private Math Tutoring in Brandon, MB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1e2430;
+    --ink-soft:#4b5566;
+    --paper:#faf7f2;
+    --paper-alt:#f1ece2;
+    --line:#e3dcce;
+    --accent:#2f5d50;
+    --accent-dark:#1f4038;
+    --accent-soft:#e4ece7;
+    --gold:#c08b3f;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);line-height:1.15;}
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,247,242,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1080px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.05rem;}
+  .brand .mark{
+    width:34px;height:34px;border-radius:9px;background:var(--accent);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:600;font-size:1rem;flex-shrink:0;
+  }
+  .nav-links{display:flex;gap:28px;font-size:0.92rem;font-weight:500;color:var(--ink-soft);}
+  .nav-links a{text-decoration:none;transition:color .15s;}
+  .nav-links a:hover{color:var(--accent-dark);}
+  .nav-cta{
+    background:var(--accent);color:#fff;padding:9px 18px;border-radius:30px;
+    font-size:0.88rem;font-weight:600;text-decoration:none;white-space:nowrap;
+    transition:background .15s;
+  }
+  .nav-cta:hover{background:var(--accent-dark);}
+  .menu-btn{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--ink);}
+
+  /* HERO */
+  .hero{
+    padding:88px 24px 72px;max-width:1080px;margin:0 auto;
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--accent-soft);color:var(--accent-dark);
+    font-size:0.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    padding:6px 14px;border-radius:20px;margin-bottom:22px;
+  }
+  .hero h1{font-size:clamp(2.1rem,4vw,3.1rem);margin-bottom:20px;}
+  .hero p.lead{font-size:1.1rem;color:var(--ink-soft);max-width:480px;margin-bottom:30px;}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;border-radius:30px;font-weight:600;font-size:0.95rem;
+    text-decoration:none;transition:transform .15s,background .15s;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-dark);}
+
+  .hero-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;box-shadow:0 20px 40px -24px rgba(30,36,48,0.25);
+  }
+  .hero-card .avatar{
+    width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#3f7a69);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;margin-bottom:16px;
+  }
+  .hero-card h3{font-size:1.15rem;margin-bottom:4px;}
+  .hero-card .role{color:var(--ink-soft);font-size:0.88rem;margin-bottom:18px;}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;border-top:1px solid var(--line);padding-top:18px;}
+  .stat-grid div span{display:block;font-family:'Fraunces',serif;font-size:1.3rem;color:var(--accent-dark);}
+  .stat-grid div small{color:var(--ink-soft);font-size:0.78rem;}
+
+  /* SECTION SHARED */
+  section{padding:70px 0;}
+  .section-head{max-width:620px;margin-bottom:46px;}
+  .section-tag{color:var(--gold);font-weight:600;font-size:0.82rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);}
+  .section-head p{color:var(--ink-soft);margin-top:12px;}
+
+  .alt{background:var(--paper-alt);}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .about-grid p{color:var(--ink-soft);margin-bottom:14px;}
+  .credential-list{list-style:none;margin-top:20px;}
+  .credential-list li{display:flex;gap:10px;margin-bottom:12px;font-size:0.95rem;color:var(--ink);}
+  .credential-list li::before{content:"✓";color:var(--accent);font-weight:700;}
+
+  /* SUBJECTS */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;transition:transform .15s,box-shadow .15s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 18px 32px -22px rgba(30,36,48,0.3);}
+  .card .icon{
+    width:42px;height:42px;border-radius:10px;background:var(--accent-soft);
+    color:var(--accent-dark);display:flex;align-items:center;justify-content:center;
+    font-size:1.2rem;margin-bottom:16px;
+  }
+  .card h3{font-size:1.05rem;margin-bottom:8px;}
+  .card p{color:var(--ink-soft);font-size:0.92rem;}
+
+  /* HOW IT WORKS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  .step{position:relative;padding-left:52px;}
+  .step .num{
+    position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;
+    background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:600;
+  }
+  .step h3{font-size:1.02rem;margin-bottom:6px;}
+  .step p{color:var(--ink-soft);font-size:0.92rem;}
+
+  /* PRICING */
+  .price-wrap{display:flex;gap:24px;flex-wrap:wrap;}
+  .price-card{
+    flex:1;min-width:230px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;
+  }
+  .price-card.highlight{border-color:var(--accent);box-shadow:0 18px 32px -22px rgba(47,93,80,0.35);}
+  .price-card h3{font-size:1rem;color:var(--ink-soft);font-weight:600;margin-bottom:10px;}
+  .price-card .amount{font-family:'Fraunces',serif;font-size:2rem;color:var(--accent-dark);margin-bottom:6px;}
+  .price-card .amount small{font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--ink-soft);font-weight:400;}
+  .price-card ul{list-style:none;margin-top:16px;}
+  .price-card li{font-size:0.88rem;color:var(--ink-soft);margin-bottom:8px;padding-left:18px;position:relative;}
+  .price-card li::before{content:"–";position:absolute;left:0;color:var(--accent);}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;}
+  .contact-info p{color:var(--ink-soft);margin-bottom:22px;}
+  .info-row{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;}
+  .info-row .ic{
+    width:36px;height:36px;border-radius:9px;background:var(--accent-soft);color:var(--accent-dark);
+    display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
+  }
+  .info-row strong{display:block;font-size:0.92rem;}
+  .info-row span{color:var(--ink-soft);font-size:0.9rem;}
+
+  form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  label{display:block;font-size:0.82rem;font-weight:600;margin-bottom:6px;color:var(--ink);}
+  input,select,textarea{
+    width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;
+    font-family:'Inter',sans-serif;font-size:0.92rem;background:var(--paper);color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+  textarea{resize:vertical;min-height:100px;}
+  .full{grid-column:1 / -1;}
+  .submit-btn{
+    width:100%;border:0;background:var(--accent);color:#fff;padding:13px;border-radius:30px;
+    font-weight:600;font-size:0.95rem;cursor:pointer;transition:background .15s;margin-top:4px;
+  }
+  .submit-btn:hover{background:var(--accent-dark);}
+  .form-note{font-size:0.78rem;color:var(--ink-soft);margin-top:10px;text-align:center;}
+
+  footer{
+    border-top:1px solid var(--line);padding:30px 24px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    color:var(--ink-soft);font-size:0.85rem;max-width:1080px;margin:0 auto;
+  }
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;padding-top:56px;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .grid3{grid-template-columns:1fr 1fr;}
+    .steps{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+  @media (max-width:560px){
+    .grid3{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><span class="mark">D</span> Tutor: Danylo</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Book a Session</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">📍 Brandon, Manitoba</div>
+    <h1>Math tutoring that actually makes sense.</h1>
+    <p class="lead">One-on-one private tutoring for elementary, middle, and high school students — in person around Brandon or online. Patient, practical, and focused on building real confidence with numbers.</p>
+    <div class="btn-row">
+      <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
+      <a href="#subjects" class="btn btn-ghost">See Subjects</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="avatar">D</div>
+    <h3>Danylo</h3>
+    <div class="role">Private Math Tutor · Brandon, MB</div>
+    <p style="font-size:0.9rem;color:var(--ink-soft);">Helping local students strengthen their math skills with one-on-one, personalized sessions.</p>
+    <div class="stat-grid">
+      <div><span>1:1</span><small>Personalized sessions</small></div>
+      <div><span>K–12</span><small>Grade levels covered</small></div>
+      <div><span>In-person</span><small>& online options</small></div>
+      <div><span>Flexible</span><small>Weekday & weekend slots</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag">About</div>
+        <h2>Hi, I'm Danylo.</h2>
+        <p>I tutor math one-on-one for students in and around Brandon, MB — from elementary foundations through high school algebra, geometry, and pre-calculus.</p>
+        <p>My approach is simple: meet the student where they are, figure out exactly where the gaps are, and work through problems step by step until concepts click — not just get memorized. Every student learns differently, so every session is built around how you learn best.</p>
+      </div>
+      <div>
+        <ul class="credential-list">
+          <li>Personalized lesson plans based on your current coursework</li>
+          <li>Homework help, test prep, and concept review</li>
+          <li>Clear, judgment-free explanations — no rushing</li>
+          <li>Regular progress updates for parents</li>
+          <li>Flexible scheduling, including evenings and weekends</li>
+          <li>In-person sessions in Brandon or online via video call</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="subjects">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Subjects</div>
+      <h2>What I tutor</h2>
+      <p>Covering the Manitoba curriculum from early grades through senior math, with extra focus wherever a student needs it most.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="icon">➕</div>
+        <h3>Elementary Math</h3>
+        <p>Number sense, fractions, basic operations, and building strong fundamentals early on.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📐</div>
+        <h3>Middle Years Math</h3>
+        <p>Ratios, integers, intro algebra, and geometry — the building blocks for high school math.</p>
+      </div>
+      <div class="card">
+        <div class="icon">∑</div>
+        <h3>High School Math</h3>
+        <p>Algebra, geometry, trigonometry, and functions — aligned to current course material.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Pre-Calculus & Calculus</h3>
+        <p>Limits, derivatives, and advanced functions explained clearly for exam readiness.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📝</div>
+        <h3>Exam & Test Prep</h3>
+        <p>Focused review sessions before midterms, finals, and provincial assessments.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>Online Sessions</h3>
+        <p>Live video tutoring with shared whiteboard for students outside the Brandon area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Process</div>
+      <h2>How it works</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Reach out</h3>
+        <p>Send a message with your grade level, course, and what you'd like help with.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Free consultation</h3>
+        <p>A short call or message to understand your goals and find a schedule that works.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Start sessions</h3>
+        <p>Begin regular one-on-one sessions, in person in Brandon or online — with progress check-ins along the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Pricing</div>
+      <h2>Simple, hourly pricing</h2>
+      <p>No packages or contracts required — pay per session. Multi-session bundles available on request.</p>
+    </div>
+    <div class="price-wrap">
+      <div class="price-card">
+        <h3>Elementary & Middle Years</h3>
+        <div class="amount">$35<small>/ hour</small></div>
+        <ul>
+          <li>Grades 1–8</li>
+          <li>In-person or online</li>
+          <li>Homework help included</li>
+        </ul>
+      </div>
+      <div class="price-card highlight">
+        <h3>High School Math</h3>
+        <div class="amount">$40<small>/ hour</small></div>
+        <ul>
+          <li>Grades 9–12</li>
+          <li>Exam & test prep</li>
+          <li>In-person or online</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Pre-Calc / Calculus</h3>
+        <div class="amount">$45<small>/ hour</small></div>
+        <ul>
+          <li>Advanced high school math</li>
+          <li>Focused exam prep</li>
+          <li>In-person or online</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-tag">Contact</div>
+        <h2>Let's get started</h2>
+        <p>Send a message with your grade level and what you're working on, and I'll get back to you to set up a free consultation.</p>
+        <div class="info-row">
+          <div class="ic">✉</div>
+          <div><strong>Email</strong><span>danylo.mathtutor@example.com</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📞</div>
+          <div><strong>Phone</strong><span>(204) 555-0123</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div><strong>Location</strong><span>Brandon, Manitoba — in-person or online</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🕒</div>
+          <div><strong>Availability</strong><span>Weekdays after 4 PM, weekends flexible</span></div>
+        </div>
+      </div>
+      <form>
+        <div class="form-row">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" type="text" placeholder="Jane Smith" required>
+          </div>
+          <div>
+            <label for="grade">Grade / course</label>
+            <input id="grade" type="text" placeholder="e.g. Grade 10, Pre-Calc" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label for="mode">Preferred format</label>
+            <select id="mode">
+              <option>In-person (Brandon)</option>
+              <option>Online</option>
+              <option>Either works</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full">
+            <label for="message">What would you like help with?</label>
+            <textarea id="message" placeholder="Tell me a bit about what you're struggling with and your schedule..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <p class="form-note">I'll typically reply within a day to set up a free consultation.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Tutor: Danylo — Private Math Tutoring, Brandon MB</div>
+  <div>Brandon, Manitoba</div>
+</footer>
+
+</body>
+</html>
