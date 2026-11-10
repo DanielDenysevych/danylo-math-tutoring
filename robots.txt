@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danylo-math-tutoring.vercel.app/sitemap.xml
