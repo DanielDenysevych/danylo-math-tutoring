@@ -95,16 +95,11 @@
     font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;margin-bottom:16px;
   }
   .hero-card h3{font-size:1.15rem;margin-bottom:4px;}
-  .hero-card .role{color:var(--ink-soft);font-size:0.88rem;margin-bottom:10px;}
+  .hero-card .role{color:var(--ink-soft);font-size:0.88rem;margin-bottom:8px;}
   .credline{
-    display:inline-flex;align-items:center;gap:6px;
-    background:var(--accent-soft);color:var(--accent-dark);
-    font-size:0.8rem;font-weight:600;padding:5px 12px;border-radius:20px;
-    margin-bottom:14px;
+    color:var(--accent-dark);font-size:0.85rem;font-weight:600;margin-bottom:14px;
   }
-  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;border-top:1px solid var(--line);padding-top:18px;}
-  .stat-grid div span{display:block;font-family:'Fraunces',serif;font-size:1.3rem;color:var(--accent-dark);}
-  .stat-grid div small{color:var(--ink-soft);font-size:0.78rem;}
+  .fact-line{border-top:1px solid var(--line);padding-top:16px;color:var(--ink-soft);font-size:0.88rem;}
 
   /* SECTION SHARED */
   section{padding:70px 0;}
@@ -130,9 +125,8 @@
   }
   .card:hover{transform:translateY(-3px);box-shadow:0 18px 32px -22px rgba(30,36,48,0.3);}
   .card .icon{
-    width:42px;height:42px;border-radius:10px;background:var(--accent-soft);
-    color:var(--accent-dark);display:flex;align-items:center;justify-content:center;
-    font-size:1.2rem;margin-bottom:16px;
+    font-family:'Fraunces',serif;color:var(--gold);font-size:1.5rem;font-weight:600;
+    margin-bottom:14px;
   }
   .card h3{font-size:1.05rem;margin-bottom:8px;}
   .card p{color:var(--ink-soft);font-size:0.92rem;}
@@ -165,13 +159,9 @@
   /* CONTACT */
   .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;}
   .contact-info p{color:var(--ink-soft);margin-bottom:22px;}
-  .info-row{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;}
-  .info-row .ic{
-    width:36px;height:36px;border-radius:9px;background:var(--accent-soft);color:var(--accent-dark);
-    display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
-  }
-  .info-row strong{display:block;font-size:0.92rem;}
-  .info-row span{color:var(--ink-soft);font-size:0.9rem;}
+  .info-row{margin-bottom:16px;}
+  .info-row strong{display:block;font-size:0.78rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  .info-row span{color:var(--ink);font-size:0.95rem;}
 
   form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
@@ -227,7 +217,7 @@
 
 <section class="hero">
   <div>
-    <div class="eyebrow">📍 Brandon, Manitoba</div>
+    <div class="eyebrow">Brandon, Manitoba</div>
     <h1>Math tutoring that actually makes sense.</h1>
     <p class="lead">One-on-one private tutoring for elementary, middle, and high school students — in person around Brandon or online. Patient, practical, and focused on building real confidence with numbers.</p>
     <div class="btn-row">
@@ -239,14 +229,9 @@
     <div class="avatar">D</div>
     <h3>Danylo Denysevych</h3>
     <div class="role">Private Math Tutor · Brandon, MB</div>
-    <div class="credline">🎓 4.4 GPA · Computer Science @ Brandon University (Math Minor)</div>
+    <div class="credline">4.0 GPA · Computer Science @ Brandon University (Math Minor)</div>
     <p style="font-size:0.9rem;color:var(--ink-soft);">Helping local students strengthen their math skills with one-on-one, personalized sessions.</p>
-    <div class="stat-grid">
-      <div><span>1:1</span><small>Personalized sessions</small></div>
-      <div><span>K–12</span><small>Grade levels covered</small></div>
-      <div><span>In-person</span><small>& online options</small></div>
-      <div><span>Flexible</span><small>Weekday & weekend slots</small></div>
-    </div>
+    <p class="fact-line">1:1 sessions · K–12 and university-level math · in-person in Brandon or online · flexible weekday and weekend scheduling.</p>
   </div>
 </section>
 
@@ -256,14 +241,14 @@
       <div>
         <div class="section-tag">About</div>
         <h2>Hi, I'm Danylo Denysevych.</h2>
-        <div class="credline">🎓 4.4 GPA · Computer Science @ Brandon University (Math Minor)</div>
-        <p>I'm a Computer Science student at Brandon University, minoring in Math and carrying a heavy math course load — with top grades across my university-level math courses. I tutor math one-on-one for students in and around Brandon, MB, from elementary foundations through high school algebra, geometry, and pre-calculus.</p>
+        <div class="credline">4.0 GPA · Computer Science @ Brandon University (Math Minor)</div>
+        <p>I'm a Computer Science student at Brandon University, minoring in Math and carrying a heavy math course load — including Calculus and Linear Algebra — with top grades across my university-level math courses. I tutor math one-on-one for students in and around Brandon, MB, from elementary foundations through high school algebra, geometry, and pre-calculus, as well as first-year university math.</p>
         <p>My approach is simple: meet the student where they are, figure out exactly where the gaps are, and work through problems step by step until concepts click — not just get memorized. Every student learns differently, so every session is built around how you learn best.</p>
       </div>
       <div>
         <ul class="credential-list">
           <li>Computer Science student at Brandon University, minoring in Math</li>
-          <li>4.4 GPA with top grades in university-level math courses</li>
+          <li>4.0 GPA with top grades in university-level math courses</li>
           <li>Personalized lesson plans based on your current coursework</li>
           <li>Homework help, test prep, and concept review</li>
           <li>Clear, judgment-free explanations — no rushing</li>
@@ -285,12 +270,12 @@
     </div>
     <div class="grid3">
       <div class="card">
-        <div class="icon">➕</div>
+        <div class="icon">+</div>
         <h3>Elementary Math</h3>
         <p>Number sense, fractions, basic operations, and building strong fundamentals early on.</p>
       </div>
       <div class="card">
-        <div class="icon">📐</div>
+        <div class="icon">%</div>
         <h3>Middle Years Math</h3>
         <p>Ratios, integers, intro algebra, and geometry — the building blocks for high school math.</p>
       </div>
@@ -300,17 +285,17 @@
         <p>Algebra, geometry, trigonometry, and functions — aligned to current course material.</p>
       </div>
       <div class="card">
-        <div class="icon">📈</div>
-        <h3>Pre-Calculus & Calculus</h3>
-        <p>Limits, derivatives, and advanced functions explained clearly for exam readiness.</p>
+        <div class="icon">∫</div>
+        <h3>Calculus & Linear Algebra</h3>
+        <p>High school pre-calculus and calculus through university-level Calculus and Linear Algebra — courses I'm currently taking as a CS/Math student.</p>
       </div>
       <div class="card">
-        <div class="icon">📝</div>
+        <div class="icon">✓</div>
         <h3>Exam & Test Prep</h3>
         <p>Focused review sessions before midterms, finals, and provincial assessments.</p>
       </div>
       <div class="card">
-        <div class="icon">💻</div>
+        <div class="icon">→</div>
         <h3>Online Sessions</h3>
         <p>Live video tutoring with shared whiteboard for students outside the Brandon area.</p>
       </div>
@@ -371,10 +356,10 @@
         </ul>
       </div>
       <div class="price-card">
-        <h3>Pre-Calc / Calculus</h3>
+        <h3>Calculus & Linear Algebra</h3>
         <div class="amount">$45<small>/ hour</small></div>
         <ul>
-          <li>Advanced high school math</li>
+          <li>Advanced high school & first-year university math</li>
           <li>Focused exam prep</li>
           <li>In-person or online</li>
         </ul>
@@ -391,20 +376,16 @@
         <h2>Let's get started</h2>
         <p>Send a message with your grade level and what you're working on, and I'll get back to you to set up a free consultation.</p>
         <div class="info-row">
-          <div class="ic">✉</div>
-          <div><strong>Email</strong><span>danylo.mathtutor@example.com</span></div>
+          <strong>Email</strong><span>danylo.mathtutor@example.com</span>
         </div>
         <div class="info-row">
-          <div class="ic">📞</div>
-          <div><strong>Phone</strong><span>(204) 555-0123</span></div>
+          <strong>Phone</strong><span>(204) 555-0123</span>
         </div>
         <div class="info-row">
-          <div class="ic">📍</div>
-          <div><strong>Location</strong><span>Brandon, Manitoba — in-person or online</span></div>
+          <strong>Location</strong><span>Brandon, Manitoba — in-person or online</span>
         </div>
         <div class="info-row">
-          <div class="ic">🕒</div>
-          <div><strong>Availability</strong><span>Weekdays after 4 PM, weekends flexible</span></div>
+          <strong>Availability</strong><span>Weekdays after 4 PM, weekends flexible</span>
         </div>
       </div>
       <form>
