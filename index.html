@@ -165,7 +165,12 @@
   .credential-list{list-style:none;margin-top:20px;}
   .credential-list li{display:flex;gap:10px;margin-bottom:12px;font-size:0.95rem;color:var(--ink);}
   .credential-list li::before{content:"✓";color:var(--accent);font-weight:700;}
-  .about-photo{width:170px;height:170px;border-radius:14px;object-fit:cover;margin-bottom:22px;}
+  .town-grid{align-self:center;}
+  .town-chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .town-chips li{
+    list-style:none;background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:8px 16px;font-size:0.9rem;color:var(--ink);
+  }
 
   /* SUBJECTS */
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
@@ -276,7 +281,6 @@
   <div class="wrap">
     <div class="about-grid">
       <div>
-        <img class="about-photo" src="assets/danylo-photo.jpg" alt="Danylo Denysevych, private math tutor in Brandon, MB">
         <div class="section-tag">About</div>
         <h2>Hi, I'm Danylo Denysevych.</h2>
         <div class="credline">4.0 GPA · Computer Science @ Brandon University (Math Minor)</div>
@@ -380,8 +384,8 @@
         <p>Most in-person sessions happen in Brandon, but I work with students from across the Westman region who drive in or prefer a hybrid mix of in-person and online sessions.</p>
         <p>Don't see your town listed? Reach out anyway — if you're within a reasonable drive of Brandon, or anywhere with an internet connection, I can likely help.</p>
       </div>
-      <div>
-        <ul class="credential-list">
+      <div class="town-grid">
+        <ul class="town-chips">
           <li>Brandon</li>
           <li>Shilo</li>
           <li>Wawanesa</li>
@@ -391,7 +395,7 @@
           <li>Souris</li>
           <li>Virden</li>
           <li>Neepawa</li>
-          <li>...and online, anywhere in Manitoba</li>
+          <li>Online — anywhere in Manitoba</li>
         </ul>
       </div>
     </div>
