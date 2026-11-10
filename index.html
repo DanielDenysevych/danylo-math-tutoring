@@ -33,8 +33,8 @@
     "addressRegion": "MB",
     "addressCountry": "CA"
   },
-  "email": "danylo.mathtutor@example.com",
-  "telephone": "+1-204-555-0123",
+  "email": "denysevych.daniel@gmail.com",
+  "telephone": "+1-519-998-7309",
   "areaServed": [
     {"@type": "City", "name": "Brandon, MB"},
     {"@type": "City", "name": "Shilo, MB"},
@@ -296,6 +296,7 @@
           <li>Clear, judgment-free explanations — no rushing</li>
           <li>Regular progress updates for parents</li>
           <li>Flexible scheduling, including evenings and weekends</li>
+          <li>Each session runs about 50 minutes</li>
           <li>In-person sessions in Brandon or online via video call</li>
         </ul>
       </div>
@@ -365,7 +366,7 @@
       <div class="step">
         <div class="num">3</div>
         <h3>Start sessions</h3>
-        <p>Begin regular one-on-one sessions, in person in Brandon or online — with progress check-ins along the way.</p>
+        <p>Begin regular ~50-minute, one-on-one sessions, in person in Brandon or online — with progress check-ins along the way.</p>
       </div>
     </div>
   </div>
@@ -409,10 +410,10 @@
         <h2>Let's get started</h2>
         <p>Send a message with your grade level and what you're working on, and I'll get back to you to set up a free consultation.</p>
         <div class="info-row">
-          <strong>Email</strong><span>danylo.mathtutor@example.com</span>
+          <strong>Email</strong><span>denysevych.daniel@gmail.com</span>
         </div>
         <div class="info-row">
-          <strong>Phone</strong><span>(204) 555-0123</span>
+          <strong>Phone</strong><span>(519) 998-7309</span>
         </div>
         <div class="info-row">
           <strong>Location</strong><span>Brandon, Manitoba — in-person or online</span>
@@ -421,25 +422,29 @@
           <strong>Availability</strong><span>Weekdays after 4 PM, weekends flexible</span>
         </div>
       </div>
-      <form>
+      <form action="https://formsubmit.co/denysevych.daniel@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New tutoring inquiry — tutoring site">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div>
             <label for="name">Full name</label>
-            <input id="name" type="text" placeholder="Jane Smith" required>
+            <input id="name" name="Name" type="text" placeholder="Jane Smith" required>
           </div>
           <div>
             <label for="grade">Grade / course</label>
-            <input id="grade" type="text" placeholder="e.g. Grade 10, Pre-Calc" required>
+            <input id="grade" name="Grade or course" type="text" placeholder="e.g. Grade 10, Pre-Calc" required>
           </div>
         </div>
         <div class="form-row">
           <div>
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@example.com" required>
+            <input id="email" name="Email" type="email" placeholder="you@example.com" required>
           </div>
           <div>
             <label for="mode">Preferred format</label>
-            <select id="mode">
+            <select id="mode" name="Preferred format">
               <option>In-person (Brandon)</option>
               <option>Online</option>
               <option>Either works</option>
@@ -449,7 +454,7 @@
         <div class="form-row">
           <div class="full">
             <label for="message">What would you like help with?</label>
-            <textarea id="message" placeholder="Tell me a bit about what you're struggling with and your schedule..."></textarea>
+            <textarea id="message" name="Message" placeholder="Tell me a bit about what you're struggling with and your schedule..."></textarea>
           </div>
         </div>
         <button type="submit" class="submit-btn">Send Message</button>
