@@ -225,6 +225,9 @@
   }
   .submit-btn:hover{background:var(--accent-dark);}
   .form-note{font-size:0.78rem;color:var(--ink-soft);margin-top:10px;text-align:center;}
+  .form-note--ok{color:#1e7a46;font-weight:600;}
+  .form-note--err{color:#b3261e;font-weight:600;}
+  .submit-btn:disabled{opacity:.7;cursor:wait;}
 
   footer{
     border-top:1px solid var(--line);padding:30px 24px;
@@ -422,11 +425,11 @@
           <strong>Availability</strong><span>Weekdays after 4 PM, weekends flexible</span>
         </div>
       </div>
-      <form action="https://formsubmit.co/denysevych.daniel@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New tutoring inquiry — tutoring site">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="7831c0cf-a5ac-451b-880c-f9aee2b9873e">
+        <input type="hidden" name="subject" value="New tutoring inquiry — tutoring site">
+        <input type="hidden" name="from_name" value="Tutoring website">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div>
             <label for="name">Full name</label>
@@ -458,8 +461,46 @@
           </div>
         </div>
         <button type="submit" class="submit-btn">Send Message</button>
-        <p class="form-note">I'll typically reply within a day to set up a free consultation.</p>
+        <p class="form-note" id="formStatus" role="status" aria-live="polite">I'll typically reply within a day to set up a free consultation.</p>
       </form>
+      <script>
+        (function () {
+          var form = document.getElementById('contactForm');
+          var btn = form.querySelector('.submit-btn');
+          var status = document.getElementById('formStatus');
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+            status.className = 'form-note';
+            status.textContent = 'Sending your message…';
+            var ctrl = new AbortController();
+            var timer = setTimeout(function () { ctrl.abort(); }, 20000);
+            fetch(form.action, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: new FormData(form),
+              signal: ctrl.signal
+            })
+              .then(function (r) { return r.json(); })
+              .then(function (data) {
+                if (!data.success) throw new Error(data.message || 'Submission failed');
+                form.reset();
+                status.className = 'form-note form-note--ok';
+                status.textContent = 'Thanks! Your message was sent. I’ll get back to you within a day.';
+              })
+              .catch(function () {
+                status.className = 'form-note form-note--err';
+                status.textContent = 'Sorry, something went wrong. Please try again, or reach out directly.';
+              })
+              .then(function () {
+                clearTimeout(timer);
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+              });
+          });
+        })();
+      </script>
     </div>
   </div>
 </section>
