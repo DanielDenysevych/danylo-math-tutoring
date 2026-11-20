@@ -58,7 +58,35 @@
       "name": "Brandon University"
     },
     "knowsLanguage": ["English", "Ukrainian"]
+  },
+  "geo": {"@type": "GeoCoordinates", "latitude": 49.8485, "longitude": -99.9501},
+  "knowsAbout": ["Elementary math", "Middle years math", "High school math", "Pre-calculus", "Calculus", "Linear algebra", "Math test preparation"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Math tutoring services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Elementary math tutoring"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Middle years math tutoring"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "High school math tutoring"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "University calculus and linear algebra tutoring"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Math exam and test prep"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Online math tutoring"}}
+    ]
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Where do in-person tutoring sessions take place?", "acceptedAnswer": {"@type": "Answer", "text": "In-person sessions are held in Brandon, Manitoba. Students from Shilo, Wawanesa, Carberry, Minnedosa, Rivers, Souris, Virden and Neepawa regularly come in, or mix in-person and online sessions."}},
+    {"@type": "Question", "name": "Do you offer online math tutoring?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Online sessions run over live video with a shared whiteboard and are available to students anywhere in Manitoba."}},
+    {"@type": "Question", "name": "What grades and math courses do you tutor?", "acceptedAnswer": {"@type": "Answer", "text": "Everything from elementary math through middle years and high school math (algebra, geometry, trigonometry, functions, pre-calculus), plus first-year university Calculus and Linear Algebra. Sessions follow the Manitoba curriculum and your current coursework."}},
+    {"@type": "Question", "name": "How long is a tutoring session?", "acceptedAnswer": {"@type": "Answer", "text": "Each one-on-one session runs about 50 minutes. Sessions are available on weekdays after 4 PM and on weekends."}},
+    {"@type": "Question", "name": "Is the first consultation free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The first step is a free consultation to understand the student's goals and find a schedule that works."}},
+    {"@type": "Question", "name": "Can sessions be in Ukrainian?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Danylo is fluent in English and Ukrainian, so sessions can be held in whichever language is more comfortable."}}
+  ]
 }
 </script>
 <style>
@@ -227,6 +255,15 @@
   .form-note--err{color:#b3261e;font-weight:600;}
   .submit-btn:disabled{opacity:.7;cursor:wait;}
 
+  /* FAQ */
+  .faq{max-width:760px;}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;margin-bottom:12px;}
+  .faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";color:var(--accent);font-weight:700;}
+  .faq details[open] summary::after{content:"2";}
+  .faq details p{color:var(--ink-soft);margin-top:10px;font-size:0.95rem;}
+
   footer{
     border-top:1px solid var(--line);padding:30px 24px;
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
@@ -256,6 +293,7 @@
       <a href="#subjects">Subjects</a>
       <a href="#how">How It Works</a>
       <a href="#service-area">Service Area</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
     <a href="#contact" class="nav-cta">Book a Session</a>
@@ -267,7 +305,7 @@
   <div>
     <div class="eyebrow">Brandon, Manitoba</div>
     <h1>Private math tutoring in Brandon, MB that actually makes sense.</h1>
-    <p class="lead">One-on-one tutoring for elementary, middle, and high school students in Brandon and nearby towns like Shilo, Wawanesa, and Carberry — in person or online. Patient, practical, and focused on building real confidence with numbers.</p>
+    <p class="lead">One-on-one math tutoring for elementary, middle years, high school, and first-year university students in Brandon and nearby towns like Shilo, Wawanesa, and Carberry — in person or online. Patient, practical, and focused on building real confidence with numbers.</p>
     <div class="btn-row">
       <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
       <a href="#subjects" class="btn btn-ghost">See Subjects</a>
@@ -409,7 +447,24 @@
   </div>
 </section>
 
-<section class="alt" id="contact">
+<section class="alt" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">FAQ</div>
+      <h2>Math tutoring in Brandon: common questions</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Where do in-person tutoring sessions take place?</summary><p>In-person sessions are held in Brandon, Manitoba. Students from Shilo, Wawanesa, Carberry, Minnedosa, Rivers, Souris, Virden and Neepawa regularly come in, or mix in-person and online sessions.</p></details>
+      <details><summary>Do you offer online math tutoring?</summary><p>Yes. Online sessions run over live video with a shared whiteboard and are available to students anywhere in Manitoba.</p></details>
+      <details><summary>What grades and math courses do you tutor?</summary><p>Everything from elementary math through middle years and high school math (algebra, geometry, trigonometry, functions, pre-calculus), plus first-year university Calculus and Linear Algebra. Sessions follow the Manitoba curriculum and your current coursework.</p></details>
+      <details><summary>How long is a tutoring session?</summary><p>Each one-on-one session runs about 50 minutes. Sessions are available on weekdays after 4 PM and on weekends.</p></details>
+      <details><summary>Is the first consultation free?</summary><p>Yes. The first step is a free consultation to understand the student's goals and find a schedule that works.</p></details>
+      <details><summary>Can sessions be in Ukrainian?</summary><p>Yes. I'm fluent in English and Ukrainian, so sessions can be held in whichever language is more comfortable.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-info">
